@@ -1,0 +1,948 @@
+@font-face{
+    font-family: ufcFont;
+    src:url(/Fonts/DIN2014/DIN2014-Bold.woff);
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    font-family: ufcFont;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100vh;
+    font-size: 100%;
+    line-height: 1.5em;
+}
+
+* {
+    box-sizing: border-box;
+}
+.visually-hidden{
+    display: none;
+
+}
+
+/*Hier begi ik met de code van mijn navigatie (logo en menu)*/
+
+body>header>nav{
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    z-index: 100;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 1em 1em 1em 1em;
+}
+
+ nav img{
+    display: flex;
+    width: 50px;
+    height: 25px;
+    padding-left: .2em;
+
+    }
+
+.menu-button{
+display: grid;
+grid-template-columns: min-content 1fr;
+justify-content: space-between;
+align-items: center;
+cursor: pointer;
+border: none;
+font-family: inherit;
+text-transform: uppercase;
+background-color: transparent;
+}
+
+.menu-button:hover, .menu-button:focus{
+background-color: obisque;
+}
+
+.menu-button img{
+width: 20px;
+}
+
+.drop-down{
+    float: right;
+}
+
+/* Dit is de code voor wanneer er op 'menu' geklikt wordt */
+
+.content-menu{
+    display: none;
+    display: block;
+    z-index: -1;
+    transform: translateY(-100%);
+    transition: transform 1s ease;
+    background-color: white;
+    background-size: cover;
+    justify-content: center;
+    align-content: center;
+    padding-right: 50px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    padding-left: 4em;
+}
+
+li{
+    display:block;
+    padding: 1em;
+}
+
+/* Hier wordt de class active geroepen door de javascript */
+
+.active{
+    transform: translateY(0);
+}
+
+.overlay {
+    height: 85vh;
+    width: 100%;
+    margin: 0;
+    padding: 0px;
+    background: url("/images/bckgrnd-ufc.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.overlay h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1em;
+    color: white;
+    margin-bottom: .01em;
+}
+.overlay h3{
+    text-transform: uppercase;
+    color: white;
+    text-emphasis-color: white;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: .3em;
+}
+.overlay h4{
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0;
+    padding-bottom: 2em;
+    color: white;
+}
+#tweebuttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+#tweebuttons button{
+    border: solid;
+    border: #d5d6d8 .1em solid;
+    background-color: #ffffff;
+    color: #191919;
+    text-transform: uppercase;
+    font-weight:600;
+    letter-spacing: .00125em;
+    padding: 1em;
+    margin-right: .75em;
+    margin-left: .75em;
+    
+}
+
+
+/*Dit is de code voor mijn eerste section, op mobiel is dit de horizontale slider*/
+
+#container{
+    display: flex;
+    overflow-x:auto;
+    border-style: none;
+    transform: translateY(-3em);
+    
+}
+
+#container:last-child{
+    display: none;
+}
+
+section:nth-child(1){
+    display: grid;
+}
+
+
+
+
+section:nth-child(1) article {
+    padding: 0.5em;
+    border: solid 1px gray;
+    background-color: white;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 80vw;
+    margin-right: .2em;
+    display: flex;
+    flex: none;
+    position: relative;
+    margin-left: .5em;
+}
+
+section:nth-child(1) article>div {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: -5.5%;
+    right: -15.5%;
+ }
+
+ section:nth-child(1) article>div>div{
+     width: 100%;
+     padding-left: 3em;
+     align-items: center;
+     text-align: center;
+ }
+  
+ section:nth-child(1) img{
+    width: auto;
+    height: 100%;
+    align-items: center;
+ }
+/*Hier begin ik met de code van mijn tweede section, waar alle articles te vinden zijn*/
+
+ section:nth-child(2){
+    display: grid;
+    padding: 0 1.125rem;
+ }
+  
+ section:nth-child(2) article{
+    display: flex;
+    flex-direction: column;
+    width: 100;
+    border-style: none;
+    margin-bottom: 2.5em;
+    box-shadow: 0 12px 2px 1px rgb(99 91 99 / 10%);
+   
+ }
+ section:nth-child(2) img{
+    width: 100%;
+ }
+ section:nth-child(2) article>img{
+     height: 100%;
+     z-index: -1;
+
+ }
+ section:nth-child(2) article footer{
+    padding: 8.333%;
+ }
+  
+ section:nth-child(2) article footer h2{
+    margin: 0 0 0.75rem 0;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    line-height: 1.375rem;
+    font-weight: bold;
+    color: #191919;
+ }
+ section:nth-child(2) article footer h3{
+    margin: 0 0 1.5rem 0;
+    color: #d20a0a;
+    text-transform: uppercase;
+    font-size: .875rem;
+    line-height: 1.125rem;
+ }
+ 
+/*Code voor de background foto die tussen twee sections zich bevindt*/
+
+.events-bg {
+    height: 80vh;
+    width: 100%;
+    margin: 0;
+    padding: 0px;
+    background: url("/images/bckgrnd-ufc2.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.ufc270 {
+    height: 85vh;
+    width: 100%;
+    margin: 0;
+    padding: 0px;
+    background: url("/images/ufc270.jpg") no-repeat center center ;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ufc270 h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1em;
+    margin: 0;
+    color: white;
+}
+.ufc270 h3{
+    text-transform: uppercase;
+    text-emphasis-color: white;
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+.ufc270 h4{
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0;
+    padding-bottom: 2em;
+    color: white;
+}
+
+.ufc270 a{
+    border: solid;
+    border: #d5d6d8 .1em solid;
+    background-color: #ffffff;
+    color: #191919;
+    text-transform: uppercase;
+    font-weight:600;
+    letter-spacing: .00125em;
+    padding: 1em;
+    margin-right: .75em;
+    margin-left: .75em;
+}
+
+section:nth-child(4) {
+    display:grid;
+    padding: 0 1.125rem;
+}
+
+section:nth-child(4) article{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-style: none;
+    margin-bottom: .5em;
+    padding: 1em;
+    border-bottom: solid 1px gray;
+    
+ }
+ section:nth-child(4) article>header{
+    display: flex;
+    width: 100%;
+    margin: .5em 0;
+ }
+
+
+ section:nth-child(4) article>header>div{
+    flex: 1 1 0;
+ }
+ section:nth-child(4) article>header>div:first-child{
+    margin-right: 1rem;
+ }
+
+
+ section:nth-child(4) article>header>div:last-child {
+     margin: 0 1rem 0 0;
+ }
+
+ section:nth-child(4) article>header>div>img{
+    width: 100%;
+    height: auto;
+ }
+ section:nth-child(4) article>header>div:last-child>h3 {
+     color: #d20a0a;
+     text-transform: uppercase;
+     font-size: .75rem;
+    line-height: 1.125rem;
+ }
+
+ section:nth-child(4) article>header>div:last-child>h2{
+     color: #191919;
+     text-transform: uppercase;
+     font-size: 1.2em;
+     line-height: 1em;
+     margin-bottom: 0;
+ }
+
+section:nth-child(4) article footer{
+    display: flex;
+    flex-direction: column;
+}
+
+ section:nth-child(4) article footer p{
+     color:#585b63;
+     font-weight:lighter;
+ }
+
+ .artikel-no-foto{
+     letter-spacing: .012em;
+     font-size: 1.25rem;
+     line-height: 1.375rem;
+     text-transform: uppercase;
+     text-align: center;
+     padding-bottom: 1em;
+ }
+
+/*code voor de footer*/
+
+.footer{
+    padding: 2em;
+    background-color: black;
+    min-height: 27.5rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+.footer-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer p{
+    color: white;
+}
+
+.footer-fixer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: center;
+}
+
+.footer-fixer li {
+    flex: 1 1 33%;
+    max-width: 33%;
+    padding: 0;
+    
+}
+
+.footer-fixer li ul {
+    padding: 0;
+}
+
+footer li{
+    color: gray;
+}
+
+.logo-footer{
+    height: 3em;;
+    align-self: center;
+}
+.localisatie-titel svg{
+    width: 1em;
+    height: 100%;
+}
+.navi{
+    display: flex;
+    flex-direction: column;
+}
+
+.localisatie-titel{
+    display: flex;
+    color:white;
+    justify-content: space-around;
+}
+.drpdwn-footer{
+    height: 2em;
+}
+
+
+/*Hier begint de code voor mijn tweede pagina*/
+
+.overlay-events {
+    height: 85vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: url("/images/bckgrnd-ufc2.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.overlay-events h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1em;
+    color: white;
+    margin: 0;
+}
+.overlay-events h3{
+    text-transform: uppercase;
+    color: white;
+    text-emphasis-color: white;
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0;
+}
+.overlay-events h4{
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0;
+    padding-bottom: 2em;
+    color: white;
+}
+
+    
+
+section ul{
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0;
+padding: 0;
+height: 10vh;
+margin-right: 1.4em;
+margin-bottom: 1.4em;
+
+}
+
+section ul>li {
+    font-size: 1.875rem;
+    letter-spacing: -.03125rem;
+    line-height: 1.875rem;
+}
+
+.opacity{
+    opacity: 80%;
+}
+
+.totaalevents{
+    text-align: center;
+}
+
+
+.events section:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.125rem;
+    margin-left: .75em;
+ }
+  
+ .events section:nth-child(1) article{
+    display: flex;
+    flex-direction: column;
+    width: 100;
+    border-style: none;
+    margin: .75rem;
+    margin-bottom: 1em;
+    box-shadow: 0 2px 8px rgb(99 91 99 / 10%);
+    padding: 0;
+ }
+ .events section:nth-child(1) img{
+    width: 100%;
+    padding-top: .5em;
+ }
+
+ .events section:nth-child(1) article > header > div:first-child{
+display: flex;
+justify-content: center;
+width: auto;
+height: 5vh;
+margin-top: 1em;
+
+}
+
+.events section:nth-child(1) article > header > div:first-child > img{
+    width: auto;
+    height: 100%;
+}
+
+ .events section:nth-child(1) article > header > div:last-child{
+    display: flex;
+    flex-direction: row;
+
+ }
+ .events section:nth-child(1) article > header > div:last-child > div:first-child{
+     transform: translateX(20%);
+ }
+ .events section:nth-child(1) article > header > div:last-child > div:last-child{
+     transform: translateX(-20%);
+ }
+
+ .events section:nth-child(1) article > section > h2{
+text-align: center;
+font-size: 1em;
+text-transform: uppercase;
+margin: 0;
+padding: 0;
+ }
+
+ .events section:nth-child(1) article > section > h5{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+
+ }
+
+ .events section:nth-child(1) article > section > p{
+       text-align: center;
+    text-transform: uppercase;
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #585b63;
+    font-weight: 400;
+    font-size: smaller;
+    letter-spacing: .002em;
+ }
+
+ .events section:nth-child(1) article footer {
+     display: flex;
+     justify-content: stretch;
+     text-align: center;
+ }
+
+ .events section:nth-child(1) article > footer > a{
+     width: 100%;
+     margin: 0;
+     text-align: center;
+     padding: 1em;
+ }
+
+ .events section:nth-child(1) article > footer > a:first-child{
+     border-top: solid 0.5px rgba(99,91,99,.25);
+     border-right: solid 0.5px rgba(99,91,99,.25) ;
+ }
+
+ .events section:nth-child(1) article > footer > a:last-child{
+    border-top: solid 0.5px rgba(99,91,99,.25);
+}
+
+ /* tablet */
+@media screen and (min-width: 48em) {
+    body {
+        background-color: transparent;
+    }   
+    .menu-button{
+        justify-self: center;
+        display: none;
+
+
+    }
+    .content-menu{
+        display: flex;
+        transform: translateY(-2em);
+        padding: 0;
+        height: 100%;
+        
+
+    }
+
+    .content-menu li{
+        border: none;
+        text-decoration: none;
+        
+    
+    }
+    .content-menu li a{
+        border: none;
+        text-decoration: none;
+        
+    
+    }
+
+    nav.toonMenu ul{
+        transform: translateX(0);
+    }
+
+    section:nth-child(1) article {
+        padding: 0;
+        border-style: none;
+        background-color: white;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        width:50vw;
+        margin-right: 0;
+        display: flex;
+        flex: none;
+        position: relative;
+        margin-left: 0;
+        border: solid 1px gray;
+        box-shadow: 0 4px 20px #ddd;
+    }
+    
+    section:nth-child(1) article>div {
+        display: flex;
+        flex: none;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: -3.5%;
+        right: -14.5%;
+     }
+    
+     section:nth-child(1) article>div>div{
+         width: 100%;
+     }
+      
+     section:nth-child(1) img{
+        width: auto;
+        height: 100%;
+        /* padding: 0.1em; */
+        align-items: center;
+     }
+
+
+
+    section:nth-child(4) article{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-style: none;
+        margin-bottom: .5em;
+        padding: 1em;
+        
+     }
+     section:nth-child(4) article>header{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: .5em 0;
+     }
+    
+    
+    
+     section:nth-child(4) article>header>div:last-child {
+         margin: 0 1rem 0 0;
+     }
+    
+     section:nth-child(4) article>header>div:last-child>h3 {
+        text-align: center;
+     }
+    
+     section:nth-child(4) article>header>div:last-child>h2{
+         text-align: center;
+     }
+    
+    section:nth-child(4) article footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+     section:nth-child(4) article footer a{
+         text-align: center;
+     }
+
+
+     .footer{
+        padding:2em;
+        background-color: black;
+        min-height: 27.5rem;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+    }
+    .footer-main{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    footer p{
+        color: white;
+        
+    }
+    
+    .footer-fixer {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        justify-content: flex-end;
+
+    }
+    
+    .footer-fixer li {
+        flex: 1 1 1 35%;
+        max-width:25%;
+        padding: .5em;
+        
+    }
+    
+    .footer-fixer li ul {
+        padding: 0;
+    }
+    
+    .logo-footer{
+        height: 4em;
+        align-self: center;
+    }
+    .localisatie-titel svg{
+        width: 1em;
+        height: 100%;
+        margin:0;
+        padding: 0;
+    }
+    .navi{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .localisatie-titel{
+        display: flex;
+        color:white;
+        justify-content: space-around;
+        margin-left: 2em;
+    }
+    .drpdwn-footer{
+        height: 2em;
+    }
+    .navi{
+        display: flex;
+        align-items: flex-end;
+        margin-left: 2em;
+    }
+
+}
+
+/* Desktop fromat*/
+@media screen and (min-width: 64em){
+    body{
+        background-color: transparent;
+    }
+    hr{
+    display: none;
+    }
+
+    section:nth-child(2){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 2em;
+        max-height: max-content;
+    }
+
+    section:nth-child(4) {
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .artikel-no-foto{
+        justify-content: center;
+    }
+
+
+
+.events section section:nth-of-type(1){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+.events section:nth-child(1) article{
+    display: flex;
+    flex-direction: row;
+    flex-direction: space-evenly;
+    box-shadow: 0 2px 8px rgb(99 91 99 / 10%);
+    padding: 0;
+    width: 100%;
+ }
+
+ .image-container{
+     display: flex;
+     flex-direction: row;
+ }
+
+ .events section:nth-child(1) article > header > div:first-child{
+display: flex;
+flex-direction: row;
+justify-content: center;
+width: auto;
+height: 5vh;
+margin-top: 1em;
+
+}
+
+.events section:nth-child(1) article > header > div:first-child > img{
+    width: auto;
+    height: 100%;
+}
+
+ .events section:nth-child(1) article > header > div:last-child{
+    display: flex;
+    flex-direction: row;
+
+ }
+ .events section:nth-child(1) article > header > div:last-child > div:first-child{
+     transform: translateX(20%);
+ }
+ .events section:nth-child(1) article > header > div:last-child > div:last-child{
+     transform: translateX(-20%);
+ }
+
+ .events section:nth-child(1) article > section > h2{
+text-align: center;
+font-size: 1em;
+text-transform: uppercase;
+margin: 0;
+padding: 0;
+ }
+
+ .events section:nth-child(1) article > section > h5{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+
+ }
+
+ .events section:nth-child(1) article > section > p{
+       text-align: center;
+    text-transform: uppercase;
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #585b63;
+    font-weight: 400;
+    font-size: smaller;
+    letter-spacing: 0;
+ }
+
+ .events section section:nth-of-type(1){
+     display: flex;
+     flex-direction: column;
+ }
+ .events section:nth-child(1) article footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.events section:nth-child(1) article > footer > a{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding: 1em 2em;
+    border: solid 1px gray;
+   margin:0;
+
+}
+
+
+}
+
